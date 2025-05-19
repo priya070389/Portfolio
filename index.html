@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Priya Kumari | Java Full Stack Developer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    :root {
+      --bg-color: #f4f4f4;
+      --text-color: #333;
+      --card-bg: white;
+      --nav-bg: #20232a;
+      --header-bg: #282c34;
+      --highlight: #61dafb;
+    }
+    body.dark-mode {
+      --bg-color: #121212;
+      --text-color: #e0e0e0;
+      --card-bg: #1e1e1e;
+      --nav-bg: #181818;
+      --header-bg: #1c1c1c;
+      --highlight: #bb86fc;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background: var(--header-bg);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+    nav {
+      background: var(--nav-bg);
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+    section.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--card-bg);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: background-color 0.3s;
+    }
+    footer {
+      background: var(--nav-bg);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .toggle-btn {
+      background: var(--highlight);
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>PRIYA KUMARI</h1>
+  <p>Java Backend & Frontend Developer | Spring Boot | React | AWS | Angular | MySQL</p>
+  <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  <a href="PRIYA_KUMARI_JAVAFULLSTACKDEVELOPER_RESUME.pdf" download class="toggle-btn">Download Resume</a>
+</header>
+
+<nav>
+  <a onclick="showSection('about')">About</a>
+  <a onclick="showSection('skills')">Skills</a>
+  <a onclick="showSection('projects')">Projects</a>
+  <a onclick="showSection('contact')">Contact</a>
+</nav>
+
+<section id="about" class="active">
+  <h2>About Me</h2>
+  <p>I am a passionate Full Stack Developer specializing in Java (Spring Boot) for backend development and Angular and React for frontend. I build scalable web applications and RESTful APIs, with experience in cloud deployment using AWS and CI/CD pipelines.</p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="card"><strong>Java</strong><br/>Core Java, OOPs, Collections,</div>
+    <div class="card"><strong>Spring Boot</strong><br/>REST APIs, JPA, Security, Microservices</div>
+    <div class="card"><strong>Frontend</strong><br/>Html, CSS, Angular, JS, Node.js</div>
+    <div class="card"><strong>React</strong><br/>Hooks, Components, Axios</div>
+    <div class="card"><strong>Database</strong><br/>MySQL, PostgreSQL, Oracledb, Mongodb</div>
+    <div class="card"><strong>Tools</strong><br/>Git, GitHub, Maven, Docker</div>
+    <div class="card"><strong>AWS</strong><br/>EC2, S3, RDS</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>Farming Assistance Portal</h3>
+      <p>Java + Spring Boot + React + AWS<br/>Farmers can register, sell crops, and connect with buyers.</p>
+    </div>
+    <div class="card">
+      <h3>Vehicle Insurance Management System</h3>
+      <p>Java + Spring Boot + Thymeleaf<br/>Admin dashboard, policy management, traffic violation tracker.</p>
+    </div>
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>HTML + CSS + JS<br/>A personal portfolio site hosted using GitHub Pages.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: priyakumari_hr@outlook.com<br/>GitHub: <a href="https://github.com/priya070389" target="_blank">priya070389</a><br/>LinkedIn: <a href="https://linkedin.com/in/priya-kumari-23578017b" target="_blank">priya-kumari</a></p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Priya Kumari. All rights reserved.</p>
+</footer>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
+</body>
+</html>
